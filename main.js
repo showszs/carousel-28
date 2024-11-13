@@ -1,28 +1,25 @@
-function Carousel() {
-
-}
+function Carousel() {}
 
 Carousel.prototype = {
+  _initProps() {
+    this.container = document.querySelector('#carousel')
+    this.slides = this.container.querySelectorAll('.slide')
+    this.indicatorsContainer = this.container.querySelector('#indicators-container')
+    this.indicatorItems = this.container.querySelectorAll('.indicator')
+    this.pauseBtn = this.container.querySelector('#pause-btn')
+    this.prevBtn = this.container.querySelector('#prev-btn')
+    this.nextBtn = this.container.querySelector('#next-btn')
 
-_initProps() {
-  this.container = document.querySelector('#carousel')
-  this.slides = this.container.querySelectorAll('.slide')
-  this.indicatorsContainer = this.container.querySelector('#indicators-container')
-  this.indicatorItems = this.container.querySelectorAll('.indicator')
-  this.pauseBtn = this.container.querySelector('#pause-btn')
-  this.prevBtn = this.container.querySelector('#prev-btn')
-  this.nextBtn = this.container.querySelector('#next-btn')
+    this.CODE_ARROW_LEFT = 'ArrowLeft'
+    this.CODE_ARROW_RIGHT = 'ArrowRight'
+    this.CODE_SPACE = 'Space'
+    this.FA_PAUSE = '<i class="fas fa-pause-circle"></i>'
+    this.FA_PLAY = '<i class="fas fa-play-circle"></i>'
+    this.INTERVAL = 2000
 
-  this.CODE_ARROW_LEFT = 'ArrowLeft'
-  this.CODE_ARROW_RIGHT = 'ArrowRight'
-  this.CODE_SPACE = 'Space'
-  this.FA_PAUSE = '<i class="fas fa-pause-circle"></i>'
-  this.FA_PLAY = '<i class="fas fa-play-circle"></i>'
-  this.INTERVAL = 2000
-
-  this.currentSlide = 0
-  this.isPlaying = true
-},
+    this.currentSlide = 0
+    this.isPlaying = true
+  },
 
   _gotoNth(n) {
     this.slides[this.currentSlide].classList.toggle('active')
@@ -113,7 +110,7 @@ function SwipeCarousel() {
 SwipeCarousel.prototype = Object.create(Carousel.prototype)
 SwipeCarousel.prototype.constructor = SwipeCarousel
 
-SwipeCarousel.prototype._initListeners = function() {
+SwipeCarousel.prototype._initListeners = function () {
   Carousel.prototype._initListeners.apply(this)
   this.container.addEventListener('touchstart', this.swipeStartHandler.bind(this))
   this.container.addEventListener('mousedown', this.swipeStartHandler.bind(this))
