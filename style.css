@@ -2,10 +2,15 @@
 essential styles:
 these make the slideshow work
 */
+.carousel {
+  margin-top: 80px;
+  width: 900px;
+  margin-inline: auto;
+}
 
 .slides {
   position: relative;
-  height: 150px;
+  height: 450px;
   padding: 0px;
   margin: 0px;
   list-style-type: none;
@@ -41,23 +46,38 @@ just for appearance; change whatever you want
 }
 
 .slide:nth-of-type(1) {
-  background: red;
+  background-image: url(src/depositphotos_1388996-stock-photo-chicago-illinois.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .slide:nth-of-type(2) {
-  background: orange;
+  background-image: url(src/istockphoto-1449046495-612x612.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .slide:nth-of-type(3) {
-  background: green;
+  background-image: url(src/depositphotos_18617813-stock-photo-city-of-chicago.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .slide:nth-of-type(4) {
-  background: blue;
+  background-image: url(src/depositphotos_198819136-stock-photo-chicago-illinois-usa-cityscape-river.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .slide:nth-of-type(5) {
-  background: purple;
+  background-image: url(src/image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* custom styles */
@@ -79,19 +99,32 @@ body {
   gap: 10px;
   margin-bottom: 20px;
 }
-.indicator,
+
 .control {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+
+  height: 30px;
+  width: 40px;
+  background-color: aliceblue;
+  padding: 0.25em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
   width: 80px;
   background-color: aliceblue;
   padding: 0.25em;
   cursor: pointer;
   user-select: none;
 }
-.indicator:hover,
+
 .control:hover {
   background-color: cadetblue;
   color: white;
