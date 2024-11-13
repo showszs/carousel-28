@@ -135,8 +135,8 @@ class Carousel {
   play() {
     if (this.isPlaying) return
     this.pauseBtn.innerHTML = this.FA_PAUSE
-    this._tick()
     this.isPlaying = true
+    this._tick()
   }
 
   pausePlay() {
